@@ -3,7 +3,11 @@ function commonEnd(a, b) {
     return false;
   }
 
-  // write your code here
+var beginning_A = a[0]
+var end_A = a[a.length - 1]
+var beginning_B = b[0]
+var end_B = a[b.length - 1]
+
 }
 
 function endsMeet(values, n) {
