@@ -8,6 +8,11 @@ var end_A = a[a.length - 1]
 var beginning_B = b[0]
 var end_B = a[b.length - 1]
 
+    if (beginning_A === beginning_B || end_A === end_B || a !== undefined && b !== undefined && a < 1 && b < 1){
+    return true;
+  } else {
+    return false;
+}
 }
 
 function endsMeet(values, n) {
