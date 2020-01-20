@@ -69,8 +69,8 @@ function middle(values) {
 
  } else {
 
-   let middle1 = values[values.length - (Math.ceil(values.length / 2))]
-   let middle2 = values[(values.length - 1) - (Math.ceil(values.length / 2))]
+   var middle1 = values[values.length - (Math.ceil(values.length / 2))]
+   var middle2 = values[(values.length - 1) - (Math.ceil(values.length / 2))]
 
    array.push(middle2, middle1)
 
@@ -80,12 +80,51 @@ function middle(values) {
  }
 
 function increasing(numbers) {
-  // write your code here
-}
+   if (numbers == undefined || numbers == []) {
+   return undefined;
+
+   } else if (numbers.length < 3 || numbers.some(isNaN)) {
+     return undefined;
+   } else {
+
+   for (let i = 1; i < numbers.length; i++) {
+   if ((numbers[i - 1] + 1) === numbers[i]) {
+   i++
+   if ((numbers[i - 1] + 1) === numbers[i]) {
+   return true;
+   break;
+   } else {
+   continue;
+   }
+   } else {
+   continue;
+   }
+   }
+   return false;
+   }
+   }
 
 function everywhere(values, x) {
-  // write your code here
-}
+
+     var result;
+
+     if (!values || x === undefined || values.length < 1) {
+       return false;
+     } else {
+       for (let i = 0; i < values.length - 1; i++) {
+           if (values[i] === x) {
+           result = 0;
+         } else if (values[i - 1] === x || values[i + 1] === x) {
+           result = 0;
+         } else {
+           result = 1;
+           return false;
+         }
+       }
+     } if (result === 0) {
+       return true;
+     }
+   }
 
 function consecutive(numbers) {
   // write your code here
