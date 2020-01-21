@@ -12,7 +12,7 @@ function commonEnd(a, b) {
 function endsMeet(values, n) {
   let a1 = [];
   let a2 = [];
-  if (values.length < n || n < 1 || !values || !Number.isInteger(n)) {
+  if (!values || n < 1 || values.length < n || !Number.isInteger(n)) {
     return [];
   }
   else {
@@ -127,16 +127,79 @@ function everywhere(values, x) {
    }
 
 function consecutive(numbers) {
-  // write your code here
+  var result;
+   if (!numbers || numbers.length < 3 || numbers.some(isNaN) || numbers.some(Number.isInteger) === false) {
+    return false;
+  } else {
+    for (let i = 0; i < numbers.length - 1; i++) {
+      if (numbers[i] % 2 === 0 && numbers[i + 1] % 2 === 0 && numbers[i + 2] % 2 === 0) {
+        result = 1;
+        break;
+      } else if (numbers[i] % 2 !== 0 && numbers[i + 1] % 2 !== 0 && numbers[i + 2] % 2 !== 0) {
+        result = 1;
+        break;
+      } else {
+      }
+      } if (result === 1) {
+        return true;
+      } else {
+        return false;
+    }
+  }
 }
 
 function balance(numbers) {
-  // write your code here
-  console.log("test");
-}
+ var big = 0
+ var sum1 = 0
+ var sum2 = 0
+ var count = 0
+
+  if (!numbers || numbers.length < 2) {
+    return false;
+ }
+
+ for (i = 0; i < numbers.length; i++) {
+   if (!(Number.isInteger(numbers[i]))) {
+     return false;
+ }
+ }
+ for (z = 0; z < numbers.length; z++) {
+   if (numbers[z] == undefined) {
+     return true;
+ }
+ }
+
+  for (a = numbers.length; a > -1; a--) {
+    sum1 = 0
+    sum2 = 0
+  for (b = numbers.length - a; b > -1; b--) {
+    sum1 = sum1 + numbers[b]
+ }
+   for (c = numbers.length - 1; c > numbers.length - a; c--) {
+    sum2 = sum2 + numbers[c]
+ } if (sum2 === sum1) {
+    return true;
+ }
+ } if (count == 0) {
+    return false;
+ }
+ }
 
 function clumps(values) {
-  // write your code here
+  let clumps = 0;
+  if (!values) {
+    return -1;
+  } else {
+
+     for (let i = 0; i < values.length - 1; i++) {
+
+      if (values[i - 1] === values[i]) {
+    } else if (values[i] === values[i + 1]) {
+        clumps++;
+      }
+    }
+    return clumps;
+  }
 }
 
 /*
