@@ -1,8 +1,8 @@
 function commonEnd(a, b) {
+
   if (!a || a.length === 0 || !b || b.length === 0) {
   return false;
-}
-  if (a[0] === b[0] || a[a.length-1] === b[b.length-1]) {
+} if (a[0] === b[0] || a[a.length-1] === b[b.length-1]) {
   return true;
 } else {
   return false;
@@ -10,7 +10,8 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
- let array = [];
+
+  var array = [];
 
   if (!values || !Number.isInteger(n) || values.length < n || n < 0) {
     return array;
@@ -57,7 +58,7 @@ function max(number) {
   }
 
   var last = number[number.length-1]
-  var middle = number[((number.length/2)-1) + 0.5]
+  var middle = number[((number.length / 2) - 1) + 0.5]
   var first = number[0]
 
     if ((last > first) && (last > middle)) {
@@ -160,7 +161,7 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
-  
+
  var sum1 = 0
  var sum2 = 0
  var count = 0
@@ -190,9 +191,8 @@ function balance(numbers) {
     sum2 = sum2 + numbers[c]
  } if (sum2 === sum1) {
     return true;
- }
- } if (count == 0) {
-    return false;
+ } } if (count == 0) {
+     return false;
  }
  }
 
