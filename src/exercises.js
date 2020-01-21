@@ -10,25 +10,34 @@ function commonEnd(a, b) {
 }
 
 function endsMeet(values, n) {
-  let a1 = [];
-  let a2 = [];
-  if (!values || n < 1 || values.length < n || !Number.isInteger(n)) {
-    return [];
+ let array = [];
+
+  if (!values || !Number.isInteger(n) || values.length < n || n < 0) {
+    return array;
+ } else {
+   if (n === 0) {
+     return values;
+} else {
+  for (let i = 0; i < n; i++) {
+    if (values[i] !== undefined) {
+      array.push(values[i]);
+ }
+ }
+  for (let i = n; i > 0; i--) {
+    if (values[values.length - i] !== undefined) {
+        array.push(values[values.length - i]);
+      }
+    }
+    return array;
   }
-  else {
-      a1 = values.slice(0, n);
-      a2 = values.slice(values.length - n, values.length + 1);
-      newArray = a1.concat(a2);
-      return newArray;
-  }
+ }
 }
 
 function difference(numbers) {
 
   if (!numbers || numbers.some(isNaN) || numbers.length < 1) {
     return undefined;
-  }
-  else {
+  } else {
       if (numbers.length === 1) {
       return 0;
     } else {
@@ -40,15 +49,16 @@ function difference(numbers) {
 }
 
 function max(number) {
+
     if (!number || number.length < 3 || number.length % 2 == 0) {
     return undefined;
   } if (number.some(isNaN)) {
     return undefined;
   }
 
-  let last = number[number.length-1]
-  let middle = number[((number.length/2)-1) + 0.5]
-  let first = number[0]
+  var last = number[number.length-1]
+  var middle = number[((number.length/2)-1) + 0.5]
+  var first = number[0]
 
     if ((last > first) && (last > middle)) {
     return last;
@@ -89,18 +99,18 @@ function increasing(numbers) {
 
    for (let i = 1; i < numbers.length; i++) {
    if ((numbers[i - 1] + 1) === numbers[i]) {
-   i++
+      i++
    if ((numbers[i - 1] + 1) === numbers[i]) {
-   return true;
-   break;
+      return true;
+      break;
    } else {
-   continue;
+      continue;
    }
    } else {
-   continue;
+      continue;
    }
    }
-   return false;
+      return false;
    }
    }
 
@@ -128,6 +138,7 @@ function everywhere(values, x) {
 
 function consecutive(numbers) {
   var result;
+
    if (!numbers || numbers.length < 3 || numbers.some(isNaN) || numbers.some(Number.isInteger) === false) {
     return false;
   } else {
@@ -149,7 +160,7 @@ function consecutive(numbers) {
 }
 
 function balance(numbers) {
- var big = 0
+  
  var sum1 = 0
  var sum2 = 0
  var count = 0
