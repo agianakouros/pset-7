@@ -16,9 +16,9 @@ function endsMeet(values, n) {
     return [];
   }
   else {
-      array1 = values.slice(0, n);
-      array2 = values.slice(values.length - n, values.length + 1);
-      newArray = array1.concat(array2);
+      a1 = values.slice(0, n);
+      a2 = values.slice(values.length - n, values.length + 1);
+      newArray = a1.concat(a2);
       return newArray;
   }
 }
